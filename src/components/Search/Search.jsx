@@ -1,11 +1,10 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState, useCallback, useEffect} from 'react';
 import {connect} from "react-redux";
 import {useLocation, useHistory} from 'react-router-dom';
 import {getSearch} from "../../actions/getSearch";
 import FoundTracks from "./FoundTracks/FoundTracks";
 import debounce from 'lodash.debounce';
 import "./Search.scss";
-
 
 const Search = ({getSearch, foundTracks, loading, error}) => {
 
@@ -26,6 +25,9 @@ const Search = ({getSearch, foundTracks, loading, error}) => {
         })
     };
 
+    useEffect(() => {
+        getSearch(inputValue);
+    },[]);
 
     const debounceSearchParams = useCallback(
         debounce(getSearch, 500),
