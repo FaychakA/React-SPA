@@ -1,0 +1,24 @@
+.song {
+  background-color: #003136;
+
+  &__img {
+    object-fit: contain;
+  }
+
+  &__wrapper {
+    display: flex;
+    padding: 10px;
+    color: #d1c4a0;
+  }
+
+  &__link {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &__link:hover {
+    color: #35FFE4;
+  }
+}

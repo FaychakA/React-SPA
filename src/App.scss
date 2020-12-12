@@ -1,0 +1,15 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__header {
+    position: sticky;
+    top: 0;
+  }
+
+  &__content {
+    flex: 1;
+    background-color: #D9F1F3;
+  }
+}

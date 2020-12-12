@@ -1,0 +1,45 @@
+.artist {
+  margin: 50px;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__img {
+    object-fit: contain;
+  }
+
+  &__tags-list {
+    display: flex;
+  }
+
+  &__tags-item {
+    list-style-type: none;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid deepskyblue;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .artist {
+    margin: 40px;
+
+    &__name {
+      text-align: center;
+    }
+
+    &__wrapper {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__tags-list {
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
