@@ -15,6 +15,7 @@ export default function musicReducer(state = initialState, action) {
                 loading: true
             };
         case LOADED_TOP_TRACKS:
+            console.log(action.payload, "action.payload");
                return {
                 ...state,
                 loading: false,

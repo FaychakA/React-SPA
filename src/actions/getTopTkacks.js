@@ -1,12 +1,11 @@
 import {START_LOAD_TOP_TRACKS, LOADED_TOP_TRACKS, ERROR_TOP_TRACKS} from "./types";
 
-const urlMusic = 'https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=c47452df41d75f8668f4640f376f4ee9&format=json';
 
-export const getTopTracks = () => {
+export const getTopTracks = (pageNumber) => {
     return dispatch => {
         dispatch(getDataStarted());
 
-        fetch(urlMusic)
+        fetch(`https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=c47452df41d75f8668f4640f376f4ee9&page=${pageNumber}&format=json`)
             .then(response => {
                 if (response.ok) {
                     return response.json();
